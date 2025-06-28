@@ -1,1 +1,1 @@
-"# ULA com funá‰es adicionais usando bfloat16" 
+# ULA com fun√ß√µes adicionais usando bfloat16
