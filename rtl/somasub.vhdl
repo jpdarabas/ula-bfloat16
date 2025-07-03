@@ -5,9 +5,9 @@ use ieee.numeric_std.all;
 
 entity somasub is
     port (
-        A, B : in  std_logic_vector(N-1 downto 0);  -- N bits
+        A, B : in  std_logic_vector(15 downto 0);
         op   : in  std_logic;                        -- 0=Soma, 1=Subtrai
-        S    : out std_logic_vector(N-1 downto 0)
+        S    : out std_logic_vector(15 downto 0)
     );
 end entity;
 

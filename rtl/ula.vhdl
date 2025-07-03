@@ -5,7 +5,7 @@ use ieee.numeric_std.all;
 
 entity ula is
     port (
-        A, B, C : in  std_logic_vector(15 downto 0);  -- N bits
+        A, B, C : in  std_logic_vector(15 downto 0); 
         OP   : in  std_logic_vector(2 downto 0); -- 8 OPerações
         S    : out std_logic_vector(15 downto 0)
     );

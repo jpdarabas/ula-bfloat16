@@ -5,8 +5,8 @@ use ieee.numeric_std.all;
 
 entity mul is
     port (
-        A, B : in  std_logic_vector(N-1 downto 0);  -- N bits
-        S    : out std_logic_vector(N-1 downto 0);
+        A, B : in  std_logic_vector(15 downto 0);
+        S    : out std_logic_vector(15 downto 0);
     );
 end entity;
 
