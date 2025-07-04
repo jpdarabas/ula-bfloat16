@@ -21,6 +21,16 @@ signal fracao_resultado : unsigned(6 downto 0); -- Sinal para a fração do resu
 signal is_nan_a, is_nan_b, is_inf_a, is_inf_b, is_zero_a, is_zero_b: boolean; -- Sinais para NaN, Inf, Zero
 
 BEGIN
+    -- Extrair sinal, expoente e mantissa de A
+    sinal_a <= A(15);
+    expoente_a <= unsigned(A(14 downto 7));
+    mantissa_a <= unsigned(A(6 downto 0));
+
+    -- Extrair sinal, expoente e mantissa de B
+    sinal_b <= B(15) xor op; -- Inverte o sinal de B se op for 1
+    expoente_b <= unsigned(B(14 downto 7));
+    mantissa_b <= unsigned(B(6 downto 0));
+
     -- NaN: Expoente é 255 e mantissa não é zero
     is_nan_a <= (expoente_a = "11111111" and mantissa_a /= "0000000");
     is_nan_b <= (expoente_b = "11111111" and mantissa_b /= "0000000");
@@ -32,16 +42,6 @@ BEGIN
     -- Zero: Expoente é 0 e mantissa é zero
     is_zero_a <= (expoente_a = "00000000" and mantissa_a = "0000000");
     is_zero_b <= (expoente_b = "00000000" and mantissa_b = "0000000");
-
-    -- Extrair sinal, expoente e mantissa de A
-    sinal_a <= A(15);
-    expoente_a <= unsigned(A(14 downto 7));
-    mantissa_a <= unsigned(A(6 downto 0));
-
-    -- Extrair sinal, expoente e mantissa de B
-    sinal_b <= B(15) xor op; -- Inverte o sinal de B se op for 1
-    expoente_b <= unsigned(B(14 downto 7));
-    mantissa_b <= unsigned(B(6 downto 0));
 
     PROCESS(A, B, op, is_nan_a, is_nan_b, is_inf_a, is_inf_b, sinal_a, sinal_b, expoente_a, expoente_b, mantissa_a, mantissa_b, fracao_a, fracao_b, fracao_a_deslocada, fracao_b_deslocada, fracao_soma, sinal_resultado, expoente_max, expoente_resultado, fracao_resultado, is_zero_a, is_zero_b) -- Todos os sinais e entradas
     BEGIN
