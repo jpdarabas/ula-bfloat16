@@ -12,6 +12,7 @@ entity ula is
 end entity;
 
 ARCHITECTURE behaviour OF ula IS
+signal add, sub, mul, mac : std_logic_vector(15 downto 0); -- Sinais intermediários para operações
 BEGIN
     add <= A + B; -- ALTERAR PARA BFLOAT16
     sub <= A - B; -- ALTERAR PARA BFLOAT16
