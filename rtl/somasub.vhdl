@@ -15,8 +15,8 @@ ARCHITECTURE behaviour OF somasub IS
 signal sinal_a, sinal_b, sinal_resultado : std_logic; -- Sinais para o sinal de A, B e resultado
 signal expoente_a, expoente_b, expoente_max, expoente_resultado : unsigned(7 downto 0); -- Sinais para os expoentes de A, B e resultado
 signal mantissa_a, mantissa_b : unsigned(6 downto 0); -- Sinais para as mantissas de A, B
-signal fracao_a, fracao_b, fracao_a_deslocada, fracao_b_deslocada : unsigned(8 downto 0); -- Sinais para as frações de A, B e suas versões deslocadas
-signal fracao_soma: signed(9 downto 0); -- Sinal para a fração da soma, com um bit extra para o carry
+signal fracao_a, fracao_b, fracao_a_deslocada, fracao_b_deslocada : unsigned(7 downto 0); -- Sinais para as frações de A, B e suas versões deslocadas
+signal fracao_soma: signed(8 downto 0); -- Sinal para a fração da soma, com um bit extra para o carry
 signal fracao_resultado : unsigned(6 downto 0); -- Sinal para a fração do resultado, com 7 bits
 signal is_nan_a, is_nan_b, is_inf_a, is_inf_b, is_zero_a, is_zero_b: boolean; -- Sinais para NaN, Inf, Zero
 
@@ -75,16 +75,16 @@ BEGIN
         else
             -- Extrai a fração da mantissa de A
             if expoente_a = 0 then -- Valor subnormal ou zero
-                fracao_a <= "00" & mantissa_a; 
+                fracao_a <= '0' & mantissa_a; 
             else -- Valor normalizado
-                fracao_a <= "01" & mantissa_a; -- Adiciona o 1 implícito
+                fracao_a <= '1' & mantissa_a; -- Adiciona o 1 implícito
             end if;
 
             -- Extrai a fração da mantissa de B
             if expoente_b = 0 then -- Valor subnormal ou zero
-                fracao_b <= "00" & mantissa_b; 
+                fracao_b <= '0' & mantissa_b; 
             else -- Valor normalizado
-                fracao_b <= "01" & mantissa_b; -- Adiciona o 1 implícito
+                fracao_b <= '1' & mantissa_b; -- Adiciona o 1 implícito
             end if;
 
             -- Alinhando expoentes
@@ -113,15 +113,16 @@ BEGIN
             end if;
 
             -- Normalização do resultado
-            if fracao_soma(9) = '1' then -- Se o bit mais significativo da fração for 1, já está normalizado
-                fracao_resultado <= unsigned(fracao_soma(8 downto 2)); -- Mantém os 7 bits significativos
+            if fracao_soma(8) = '1' then -- Se o bit mais significativo da fração for 1, já está normalizado
+                fracao_resultado <= unsigned(fracao_soma(7 downto 1)); -- Mantém os 7 bits significativos
                 expoente_resultado <= expoente_max + 1; -- Incrementa o expoente
-            elsif fracao_soma(8) = '1' then -- Se o segundo bit mais significativo for 1, desloca a fração
-                fracao_resultado <= unsigned(fracao_soma(7 downto 1)); -- Desloca a fração para normalizar
-                expoente_resultado <= expoente_max; -- Mantém o expoente máximo
-            else -- Se ambos os bits mais significativos forem 0, decrementa o expoente
+            else
                 fracao_resultado <= unsigned(fracao_soma(6 downto 0)); -- Mantém os 7 bits significativos
-                expoente_resultado <= expoente_max - 1; -- Decrementa o expoente
+                if fracao_soma(7) = '1' then -- Se o segundo bit mais significativo for 1, desloca a fração
+                    expoente_resultado <= expoente_max; -- Mantém o expoente máximo
+                else -- Se ambos os bits mais significativos forem 0, decrementa o expoente
+                    expoente_resultado <= expoente_max - 1; -- Decrementa o expoente
+                end if;
             end if;
 
             -- Resultado final
