@@ -1,0 +1,532 @@
+$date
+  Fri Jul 04 23:34:40 2025
+$end
+$version
+  GHDL v0
+$end
+$timescale
+  1 fs
+$end
+$scope module standard $end
+$upscope $end
+$scope module std_logic_1164 $end
+$upscope $end
+$scope module numeric_std $end
+$upscope $end
+$scope module ula_tb $end
+$var reg 16 ! a[15:0] $end
+$var reg 16 " b[15:0] $end
+$var reg 16 # c[15:0] $end
+$var reg 16 $ y[15:0] $end
+$var reg 3 % op[2:0] $end
+$scope module dut $end
+$var reg 16 & a[15:0] $end
+$var reg 16 ' b[15:0] $end
+$var reg 16 ( c[15:0] $end
+$var reg 3 ) op[2:0] $end
+$var reg 16 * s[15:0] $end
+$var reg 16 + add[15:0] $end
+$var reg 16 , sub[15:0] $end
+$var reg 16 - mul[15:0] $end
+$var reg 16 . mac[15:0] $end
+$scope module addsomasub $end
+$var reg 16 / a[15:0] $end
+$var reg 16 0 b[15:0] $end
+$var reg 1 1 op $end
+$var reg 16 2 s[15:0] $end
+$var reg 1 3 sinal_a $end
+$var reg 1 4 sinal_b $end
+$var reg 1 5 sinal_resultado $end
+$var reg 8 6 expoente_a[7:0] $end
+$var reg 8 7 expoente_b[7:0] $end
+$var reg 8 8 expoente_max[7:0] $end
+$var reg 8 9 expoente_resultado[7:0] $end
+$var reg 7 : mantissa_a[6:0] $end
+$var reg 7 ; mantissa_b[6:0] $end
+$var reg 8 < fracao_a[7:0] $end
+$var reg 8 = fracao_b[7:0] $end
+$var reg 8 > fracao_a_deslocada[7:0] $end
+$var reg 8 ? fracao_b_deslocada[7:0] $end
+$var reg 9 @ fracao_soma[8:0] $end
+$var reg 7 A fracao_resultado[6:0] $end
+$var reg 1 B is_nan_a $end
+$var reg 1 C is_nan_b $end
+$var reg 1 D is_inf_a $end
+$var reg 1 E is_inf_b $end
+$var reg 1 F is_zero_a $end
+$var reg 1 G is_zero_b $end
+$upscope $end
+$scope module subsomasub $end
+$var reg 16 H a[15:0] $end
+$var reg 16 I b[15:0] $end
+$var reg 1 J op $end
+$var reg 16 K s[15:0] $end
+$var reg 1 L sinal_a $end
+$var reg 1 M sinal_b $end
+$var reg 1 N sinal_resultado $end
+$var reg 8 O expoente_a[7:0] $end
+$var reg 8 P expoente_b[7:0] $end
+$var reg 8 Q expoente_max[7:0] $end
+$var reg 8 R expoente_resultado[7:0] $end
+$var reg 7 S mantissa_a[6:0] $end
+$var reg 7 T mantissa_b[6:0] $end
+$var reg 8 U fracao_a[7:0] $end
+$var reg 8 V fracao_b[7:0] $end
+$var reg 8 W fracao_a_deslocada[7:0] $end
+$var reg 8 X fracao_b_deslocada[7:0] $end
+$var reg 9 Y fracao_soma[8:0] $end
+$var reg 7 Z fracao_resultado[6:0] $end
+$var reg 1 [ is_nan_a $end
+$var reg 1 \ is_nan_b $end
+$var reg 1 ] is_inf_a $end
+$var reg 1 ^ is_inf_b $end
+$var reg 1 _ is_zero_a $end
+$var reg 1 ` is_zero_b $end
+$upscope $end
+$scope module mulmul $end
+$var reg 16 a a[15:0] $end
+$var reg 16 b b[15:0] $end
+$var reg 16 c s[15:0] $end
+$var reg 1 d sinal_a $end
+$var reg 1 e sinal_b $end
+$var reg 1 f sinal_resultado $end
+$var reg 8 g expoente_a[7:0] $end
+$var reg 8 h expoente_b[7:0] $end
+$var reg 8 i expoente_resultado[7:0] $end
+$var reg 9 j soma_expoentes[8:0] $end
+$var reg 7 k mantissa_a[6:0] $end
+$var reg 7 l mantissa_b[6:0] $end
+$var reg 7 m mantissa_resultado[6:0] $end
+$var reg 18 n mantissa_mult[17:0] $end
+$var reg 9 o fracao_a[8:0] $end
+$var reg 9 p fracao_b[8:0] $end
+$var reg 1 q is_nan_a $end
+$var reg 1 r is_nan_b $end
+$var reg 1 s is_inf_a $end
+$var reg 1 t is_inf_b $end
+$var reg 1 u is_zero_a $end
+$var reg 1 v is_zero_b $end
+$upscope $end
+$scope module macsomasub $end
+$var reg 16 w a[15:0] $end
+$var reg 16 x b[15:0] $end
+$var reg 1 y op $end
+$var reg 16 z s[15:0] $end
+$var reg 1 { sinal_a $end
+$var reg 1 | sinal_b $end
+$var reg 1 } sinal_resultado $end
+$var reg 8 !" expoente_a[7:0] $end
+$var reg 8 "" expoente_b[7:0] $end
+$var reg 8 #" expoente_max[7:0] $end
+$var reg 8 $" expoente_resultado[7:0] $end
+$var reg 7 %" mantissa_a[6:0] $end
+$var reg 7 &" mantissa_b[6:0] $end
+$var reg 8 '" fracao_a[7:0] $end
+$var reg 8 (" fracao_b[7:0] $end
+$var reg 8 )" fracao_a_deslocada[7:0] $end
+$var reg 8 *" fracao_b_deslocada[7:0] $end
+$var reg 9 +" fracao_soma[8:0] $end
+$var reg 7 ," fracao_resultado[6:0] $end
+$var reg 1 -" is_nan_a $end
+$var reg 1 ." is_nan_b $end
+$var reg 1 /" is_inf_a $end
+$var reg 1 0" is_inf_b $end
+$var reg 1 1" is_zero_a $end
+$var reg 1 2" is_zero_b $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+b0011111110000000 !
+b0100000000000000 "
+b0000000000000000 #
+bUUUUUUUUUUUUUUUU $
+b000 %
+b0011111110000000 &
+b0100000000000000 '
+b0000000000000000 (
+b000 )
+bUUUUUUUUUUUUUUUU *
+b0100000001000000 +
+b1011111110000000 ,
+b0100000000000000 -
+b0100000000000000 .
+b0011111110000000 /
+b0100000000000000 0
+01
+b0100000001000000 2
+03
+04
+05
+b01111111 6
+b10000000 7
+b10000000 8
+b10000000 9
+b0000000 :
+b0000000 ;
+b10000000 <
+b10000000 =
+b01000000 >
+b10000000 ?
+b011000000 @
+b1000000 A
+0B
+0C
+0D
+0E
+0F
+0G
+b0011111110000000 H
+b0100000000000000 I
+1J
+b1011111110000000 K
+0L
+1M
+1N
+b01111111 O
+b10000000 P
+b10000000 Q
+b01111111 R
+b0000000 S
+b0000000 T
+b10000000 U
+b10000000 V
+b01000000 W
+b10000000 X
+b001000000 Y
+b0000000 Z
+0[
+0\
+0]
+0^
+0_
+0`
+b0011111110000000 a
+b0100000000000000 b
+b0100000000000000 c
+0d
+0e
+0f
+b01111111 g
+b10000000 h
+b10000000 i
+b010000000 j
+b0000000 k
+b0000000 l
+b0000000 m
+b000100000000000000 n
+b010000000 o
+b010000000 p
+0q
+0r
+0s
+0t
+0u
+0v
+b0000000000000000 w
+b0100000000000000 x
+0y
+b0100000000000000 z
+0{
+0|
+0}
+b00000000 !"
+b10000000 ""
+b00000000 #"
+b00000000 $"
+b0000000 %"
+b0000000 &"
+b00000000 '"
+b00000000 ("
+b00000000 )"
+b00000000 *"
+b000000000 +"
+b0000000 ,"
+0-"
+0."
+0/"
+00"
+11"
+02"
+#10000000
+b0100000010100000 !
+b0100000001000000 $
+b0100000010100000 &
+b0100000001000000 *
+b0100000011100000 +
+b0100000001000000 ,
+b0100000100100000 -
+b0100000100100000 .
+b0100000010100000 /
+b0100000011100000 2
+b10000001 6
+b10000001 8
+b10000001 9
+b0100000 :
+b10100000 <
+b10100000 >
+b01000000 ?
+b011100000 @
+b1100000 A
+b0100000010100000 H
+b0100000001000000 K
+0N
+b10000001 O
+b10000001 Q
+b10000000 R
+b0100000 S
+b10100000 U
+b10100000 W
+b01000000 X
+b001100000 Y
+b1000000 Z
+b0100000010100000 a
+b0100000100100000 c
+b10000001 g
+b10000010 i
+b010000010 j
+b0100000 k
+b0100000 m
+b000101000000000000 n
+b010100000 o
+b0100000100100000 x
+b0100000100100000 z
+b10000010 ""
+b0100000 &"
+#20000000
+b001 %
+b001 )
+#30000000
+b0100000000000000 !
+b0100000010100000 "
+b0100000000000000 &
+b0100000010100000 '
+b0100000011100000 +
+b1100000001000000 ,
+b0100000000000000 /
+b0100000010100000 0
+b0100000011100000 2
+b10000000 6
+b10000001 7
+b0000000 :
+b0100000 ;
+b10000000 <
+b10100000 =
+b01000000 >
+b10100000 ?
+b011100000 @
+b1100000 A
+b0100000000000000 H
+b0100000010100000 I
+b1100000001000000 K
+1N
+b10000000 O
+b10000001 P
+b10000000 R
+b0000000 S
+b0100000 T
+b10000000 U
+b10100000 V
+b01000000 W
+b10100000 X
+b001100000 Y
+b0100000000000000 a
+b0100000010100000 b
+b10000000 g
+b10000001 h
+b0000000 k
+b0100000 l
+b010000000 o
+b010100000 p
+#40000000
+b0100000001000000 "
+b0100000000000000 $
+b010 %
+b0100000001000000 '
+b010 )
+b0100000000000000 *
+b0100000010100000 +
+b1011111110000000 ,
+b0100000011000000 -
+b0100000011000000 .
+b0100000001000000 0
+b0100000010100000 2
+b10000000 7
+b10000000 8
+b10000001 9
+b1000000 ;
+b11000000 =
+b10000000 >
+b11000000 ?
+b101000000 @
+b0100000 A
+b0100000001000000 I
+b1011111110000000 K
+b10000000 P
+b10000000 Q
+b01111111 R
+b1000000 T
+b11000000 V
+b10000000 W
+b11000000 X
+b001000000 Y
+b0000000 Z
+b0100000001000000 b
+b0100000011000000 c
+b10000000 h
+b10000001 i
+b010000001 j
+b1000000 l
+b1000000 m
+b000110000000000000 n
+b011000000 p
+b0100000011000000 x
+b0100000011000000 z
+b10000001 ""
+b1000000 &"
+#50000000
+b0010000001000000 "
+b0110000001000000 $
+b011 %
+b0010000001000000 '
+b011 )
+b0110000001000000 *
+b0100000000000000 +
+b0100000000000000 ,
+b0010000011000000 -
+b0010000011000000 .
+b0010000001000000 0
+b0100000000000000 2
+b01000000 7
+b10000000 9
+b00000000 ?
+b010000000 @
+b0000000 A
+b0010000001000000 I
+b0100000000000000 K
+0N
+b01000000 P
+b10000000 R
+b00000000 X
+b010000000 Y
+b0010000001000000 b
+b0010000011000000 c
+b01000000 h
+b01000001 i
+b001000001 j
+b0010000011000000 x
+b0010000011000000 z
+b01000001 ""
+#60000000
+b0011111110000000 $
+b100 %
+b100 )
+b0011111110000000 *
+#70000000
+b0010000001000000 !
+b0100000000000000 "
+b0010000001000000 &
+b0100000000000000 '
+b0100000000000000 +
+b1100000000000000 ,
+b0010000001000000 /
+b0100000000000000 0
+b0100000000000000 2
+b01000000 6
+b10000000 7
+b1000000 :
+b0000000 ;
+b11000000 <
+b10000000 =
+b00000000 >
+b10000000 ?
+b010000000 @
+b0000000 A
+b0010000001000000 H
+b0100000000000000 I
+b1100000000000000 K
+1N
+b01000000 O
+b10000000 P
+b1000000 S
+b0000000 T
+b11000000 U
+b10000000 V
+b00000000 W
+b10000000 X
+b010000000 Y
+b0000000 Z
+b0010000001000000 a
+b0100000000000000 b
+b01000000 g
+b10000000 h
+b1000000 k
+b0000000 l
+b011000000 o
+b010000000 p
+#80000000
+b0000000000000000 "
+b0010000001000000 $
+b110 %
+b0000000000000000 '
+b110 )
+b0010000001000000 *
+b0010000001000000 +
+b0010000001000000 ,
+b0000000000000000 -
+b0000000000000000 .
+b0000000000000000 0
+b0010000001000000 2
+b00000000 7
+b00000000 8
+b00000000 9
+b00000000 <
+b00000000 =
+b00000000 >
+b00000000 ?
+b000000000 @
+1G
+b0000000000000000 I
+b0010000001000000 K
+0N
+b00000000 P
+b00000000 Q
+b00000000 R
+b00000000 U
+b00000000 V
+b00000000 W
+b00000000 X
+b000000000 Y
+1`
+b0000000000000000 b
+b0000000000000000 c
+b00000000 h
+b00000000 i
+b000000000 j
+b0000000 m
+b000000000000000000 n
+b000000000 o
+b000000000 p
+1v
+b0000000000000000 x
+b0000000000000000 z
+b00000000 ""
+b0000000 &"
+12"
+#90000000
+b1010000001000000 !
+b0000000000000000 $
+b1010000001000000 &
+b0000000000000000 *
+b1010000001000000 +
+b1010000001000000 ,
+b1010000001000000 /
+b1010000001000000 2
+13
+b1010000001000000 H
+b1010000001000000 K
+1L
+b1010000001000000 a
+1d
+#100000000

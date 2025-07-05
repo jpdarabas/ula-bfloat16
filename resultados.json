@@ -1,0 +1,32 @@
+{
+    "grupo": {
+        "nome": "Grupo-E",
+        "alunos": [
+          {"nome": "Bernardo Schissatti", "matricula": "24200404"},
+          {"nome": "João Pedro Darabas Cardoso", "matricula": "24204069"},
+          {"nome": "Vinicius Fernandes Domingos", "matricula": "24200384"},
+          {"nome": " Rafael Brunetti Mussi", "matricula": "24203053"},
+          {"nome": "Gabriel Piovesana", "matricula": "24204066"},
+          {"nome": "Eduardo da Silva Letsch", "matricula": "24204762"},
+          {"nome": "Eduardo Rodrigues Tomm", "matricula": "24204766"},
+          {"nome": "Arthur Meneghel de Souza", "matricula": "24205766"}
+        ]
+    },
+    "quartus": {
+        "os": "Windows10 (22H2)",
+        "versao": "13.0.1.232",
+        "fpga": {
+            "familia": "Cyclone II",
+            "dispositivo": "EP2C5AF256A7"
+        }
+    },
+    "utilizacao": {
+        "total combinational functions": 0,
+        "dedicated logic registers": 0,
+        "total pins": 67
+    },
+    "atraso": {
+        "Fmax": 151.86,
+        "unidade": "MHz"
+    }
+}

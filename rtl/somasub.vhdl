@@ -56,6 +56,7 @@ BEGIN
         variable v_frac_norm   : unsigned(8 downto 0);
         variable v_exp_result  : unsigned(7 downto 0);
     BEGIN
+    
         -- Valores padrão para evitar inferência de latches
         fracao_a <= (others => '0');
         fracao_b <= (others => '0');
