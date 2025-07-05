@@ -55,8 +55,7 @@ BEGIN
         variable v_frac_soma   : signed(8 downto 0);
         variable v_frac_norm   : unsigned(8 downto 0);
         variable v_exp_result  : unsigned(7 downto 0);
-    BEGIN
-    
+        BEGIN
         -- Valores padrão para evitar inferência de latches
         fracao_a <= (others => '0');
         fracao_b <= (others => '0');
@@ -67,6 +66,7 @@ BEGIN
         expoente_max <= (others => '0');
         expoente_resultado <= (others => '0');
         sinal_resultado <= '0';
+        S <= (others => '0');
 
         -- DEBUG: extrair sinal, expoente e mantissa
         -- assert false report "sinal_a: " & std_logic'image(sinal_a) severity note;
