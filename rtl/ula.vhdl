@@ -12,7 +12,7 @@ entity ula is
 end entity;
 
 ARCHITECTURE behaviour OF ula IS
-signal add, sub, mul, mac : std_logic_vector(15 downto 0); -- Sinais intermediários para operações
+signal add, sub, mul, mac : std_logic_vector(15 downto 0) := (others => '0'); -- Valores padrão
 BEGIN
     addsomasub: entity work.somasub
     port map (
@@ -44,6 +44,9 @@ BEGIN
 
     PROCESS(A, B, C, OP)
     BEGIN
+        -- Valores padrão para evitar inferência de latches
+        S <= (others => '0');
+
         CASE OP IS
             WHEN "000" => -- Soma (A + B)
                 S <= add;
@@ -53,8 +56,6 @@ BEGIN
                 S <= A and B; -- Operação AND bit a bit
             WHEN "011" => -- OR bit a bit
                 S <= A or B; -- Operação OR bit a bit
-            WHEN  "011" => -- OR bit a bit
-
             WHEN "100" => -- A > B
             -- (A > B) ? 1 : 0 no formato bfloat16
                 IF sub(0) = '1' THEN
@@ -73,6 +74,8 @@ BEGIN
                 END IF;
             WHEN "111" => -- C + (A*B)
                 S <= mac;
+            WHEN OTHERS => -- Caso padrão, não definido
+                S <= (others => '0'); -- Retorna zero se a operação não for reconhecida
         END CASE;
 
     END PROCESS;

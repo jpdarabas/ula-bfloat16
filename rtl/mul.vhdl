@@ -51,6 +51,8 @@ begin
         variable expoente_resultado_vec : unsigned(7 downto 0);
         
     begin
+        S <= (others => '0');
+
         -- Cálculo unificado do sinal
         sinal_resultado := sinal_a xor sinal_b;
 
