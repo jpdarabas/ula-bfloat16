@@ -166,10 +166,12 @@ BEGIN
             v_exp_result := expoente_max;
 
             -- Normaliza: desloca à esquerda enquanto o bit 8 (MSB) for zero e o expoente > 0
-            while (v_frac_norm(8) = '0') and (v_exp_result > 0) loop
+            for i in 0 to 8 loop -- Máximo de 9 iterações (tamanho da fração)
+                exit when (v_frac_norm(8) = '1') or (v_exp_result = 0);
                 v_frac_norm := v_frac_norm(7 downto 0) & '0';
                 v_exp_result := v_exp_result - 1;
             end loop;
+
 
             -- Se o bit 8 for 1, significa overflow da soma, então ajusta
             if v_frac_norm(8) = '1' then
