@@ -5,7 +5,7 @@
           {"nome": "Bernardo Schissatti", "matricula": "24200404"},
           {"nome": "João Pedro Darabas Cardoso", "matricula": "24204069"},
           {"nome": "Vinicius Fernandes Domingos", "matricula": "24200384"},
-          {"nome": " Rafael Brunetti Mussi", "matricula": "24203053"},
+          {"nome": "Rafael Brunetti Mussi", "matricula": "24203053"},
           {"nome": "Gabriel Piovesana", "matricula": "24204066"},
           {"nome": "Eduardo da Silva Letsch", "matricula": "24204762"},
           {"nome": "Eduardo Rodrigues Tomm", "matricula": "24204766"},
@@ -21,12 +21,12 @@
         }
     },
     "utilizacao": {
-        "total combinational functions": 0,
-        "dedicated logic registers": 0,
-        "total pins": 67
+        "total combinational functions": 1126,
+        "dedicated logic registers": 64,
+        "total pins": 69
     },
     "atraso": {
-        "Fmax": 151.86,
+        "Fmax": 26.9,
         "unidade": "MHz"
     }
 }
